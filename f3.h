@@ -1,23 +1,15 @@
-//
-// Created by admin on 19.11.2023.
-//
+#ifndef F3_H
+#define F3_H
+
+#include "utils.h"
+#include "functions.h"
+
 #define COUNT_CALLS_F3
 
 #ifdef COUNT_CALLS_F3
-int callCount_f3 = 0;
+extern int callCount_f3;
 #endif
 
-int f3(int n) {
-#ifdef COUNT_CALLS_F3
+int f3(int n);
 
-    callCount_f3++;
-#endif
-
-    // Base case
-    if (n <= 0) {
-        return 0;
-    }
-
-    // Recursive call
-    return ;
-}
+#endif // F3_H

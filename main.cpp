@@ -1,13 +1,11 @@
 #include <iostream>
-#include "f1.h"
-#include "f2.h"
-#include "f3.h"
-#include "f4.h"
 #include <cstdlib>
-#include "helpers.h"
+#include "functions.h"
 
-
-
+extern int callCount_f1;
+extern int callCount_f2;
+extern int callCount_f3;
+extern int callCount_f4;
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
@@ -17,9 +15,14 @@ int main(int argc, char *argv[]) {
 
     const int N = std::atoi(argv[1]);
 
-    std::cout << "The value of N is: " << N << std::endl;
-    int count = 0;
+    std::cout << "The value of N is: " << N << std::endl << std::endl;
 
-    std::cout<< "The number of calls is: " << count << std::endl;
+    std::cout << "main.cpp f1(N) = " <<  f1(N) << std::endl;
+    std::cout << "f(1): " << callCount_f1 << std::endl;
+    std::cout << "f(2): " << callCount_f2 << std::endl;
+    std::cout << "f(3): " << callCount_f3 << std::endl;
+    std::cout << "f(4): " << callCount_f4 << std::endl;
+    std::cout << std::endl;
+
     return 0;
 }

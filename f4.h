@@ -1,22 +1,15 @@
-//
-// Created by admin on 19.11.2023.
-//
+#ifndef F4_H
+#define F4_H
+
+#include "utils.h"
+#include "functions.h"
+
 #define COUNT_CALLS_F4
 
 #ifdef COUNT_CALLS_F4
-int callCount_f4 = 0;
+extern int callCount_f4;
 #endif
 
-int f4(int n) {
-#ifdef COUNT_CALLS_F4
-    callCount_f4++;
-#endif
+int f4(int n);
 
-    // Base case
-    if (n <= 0) {
-        return 0;
-    }
-
-    // Recursive call
-    return ;
-}
+#endif // F4_H
