@@ -1,28 +1,15 @@
-//
-// Created by admin on 19.11.2023.
-//
+#ifndef F1_H
+#define F1_H
 
-#include <random>
-#include "helpers.h"
+#include "utils.h"
+#include "functions.h"
 
 #define COUNT_CALLS_F1
 
 #ifdef COUNT_CALLS_F1
-int callCount_f1 = 0;
+extern int callCount_f1;
 #endif
 
+int f1(int n);
 
-int f1(int n) {
-#ifdef COUNT_CALLS_F1
-
-    callCount_f1++;
-#endif
-
-
-    if (n <= 0) {
-        return 0;
-    }
-   auto res1 = arraySum();
-    std
-    return res1+res2;
-}
+#endif // F1_H
