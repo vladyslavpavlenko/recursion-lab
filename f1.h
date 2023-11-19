@@ -2,24 +2,27 @@
 // Created by admin on 19.11.2023.
 //
 
+#include <random>
+#include "helpers.h"
+
 #define COUNT_CALLS_F1
-#define COUNT_CALLS_F2
-#define COUNT_CALLS_F3
-#define COUNT_CALLS_F4
 
-
-// Function to count calls
-int f1(int n, int &callCount) {
 #ifdef COUNT_CALLS_F1
-
-    callCount++;
+int callCount_f1 = 0;
 #endif
 
-    // Base case
+
+int f1(int n) {
+#ifdef COUNT_CALLS_F1
+
+    callCount_f1++;
+#endif
+
+
     if (n <= 0) {
         return 0;
     }
-
-    // Recursive call
-    return f2()+f3();
+   auto res1 = arraySum();
+    std
+    return res1+res2;
 }
