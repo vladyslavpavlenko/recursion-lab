@@ -3,8 +3,8 @@
 
 #include <thread>
 
-int SLEEP_LOWER_BOUND = 100;
-int SLEEP_UPPER_BOUND = 1000;
+constexpr int SLEEP_LOWER_BOUND = 100;
+constexpr int SLEEP_UPPER_BOUND = 1000;
 
 int f1(int);
 int f2(int);
