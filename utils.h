@@ -1,8 +1,12 @@
 #ifndef RECURSION_LAB_HELPERS_H
 #define RECURSION_LAB_HELPERS_H
 
-#include <functional>
+#include <string>
+#include <random>
+#include <iostream>
+// #include <syncstream>
 
-int getRandomNumber();
+int getRandomNumber(int, int);
+// void syncOut(const std::string& message);
 
 #endif //RECURSION_LAB_HELPERS_H
