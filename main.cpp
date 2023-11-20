@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 
     const int N = std::atoi(argv[1]);
 
-    std::osyncstream(std::cout) << "The value of N is: " << N << std::endl << std::endl << std::endl;
+    std::osyncstream(std::cout) << "The value of N is: " << N << std::endl << std::endl;
 
     int res = 0;
 
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     std::future<int> ret = std::async(f1, N);
     res = ret.get();
 
-    std::osyncstream(std::cout) << "f1() result: " << res  << std::endl << std::endl;
+    std::osyncstream(std::cout) << "\nf1() result: " << res  << std::endl << std::endl;
 
     std::osyncstream(std::cout) << "f1(): " << callCount_f1 << std::endl;
     std::osyncstream(std::cout) << "f2(): " << callCount_f2 << std::endl;
