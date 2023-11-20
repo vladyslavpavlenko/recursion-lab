@@ -17,6 +17,9 @@ int f4(int n) {
         return 0;
     }
 
+    // Sleep thread for a random time
+    std::this_thread::sleep_for(std::chrono::milliseconds(getRandomNumber(SLEEP_LOWER_BOUND, SLEEP_UPPER_BOUND)));
+
     // Select a random function
     int rand = getRandomNumber(1, 4);
     int res1 = 0;

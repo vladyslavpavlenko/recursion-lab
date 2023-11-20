@@ -10,6 +10,6 @@
 extern int callCount_f3;
 #endif
 
-int f3(int n);
+int f3(int);
 
 #endif // F3_H
