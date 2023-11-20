@@ -11,7 +11,3 @@ int getRandomNumber(int lower_bound, int upper_bound ) {
     // Return a random integer
     return distribution(gen);
 }
-
-void syncOut(const std::string& message) {
-    std::osyncstream(std::cout) << message;
-}

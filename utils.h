@@ -7,6 +7,5 @@
 #include <syncstream>
 
 int getRandomNumber(int, int);
-void syncOut(const std::string&);
 
 #endif //RECURSION_LAB_HELPERS_H

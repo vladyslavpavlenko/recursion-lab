@@ -9,8 +9,9 @@ int f2(int n) {
     callCount_f2++;
 #endif
 
-    // syncOut("f2 is called\n");
-    std::cout << "f2 is called" << std::endl;
+    // Print thread id and debug message
+    std::thread::id this_id = std::this_thread::get_id();
+    std::osyncstream(std::cout) << "[" << this_id << "] f2() is called\n";
 
     // Base case
     if (n <= 0) {
@@ -20,44 +21,23 @@ int f2(int n) {
     // Sleep thread for a random time
     std::this_thread::sleep_for(std::chrono::milliseconds(getRandomNumber(SLEEP_LOWER_BOUND, SLEEP_UPPER_BOUND)));
 
-    // Select a random function
+    // Run a first random function in a separate thread
     int rand = getRandomNumber(1, 4);
     int res1 = 0;
 
-    switch (rand) {
-        case 1:
-            res1 = f1(n-1);
-            break;
-        case 2:
-            res1 = f2(n-1);
-            break;
-        case 3:
-            res1 = f3(n-1);
-            break;
-        case 4:
-            res1 = f4(n-1);
-            break;
-    }
+    std::future<int> ret = std::async(functions[rand-1], n-1);
+    res1 = ret.get();
 
+    // std::osyncstream(std::cout) << "[" << this_id << "] f2 returns " << res1 << " from f" << rand-1 << "(" << n-1 << ")\n";
+
+    // Run a second random function in a separate thread
     rand = getRandomNumber(1, 4);
     int res2 = 0;
 
-    switch (rand) {
-        case 1:
-            res2 = f1(n/3);
-            break;
-        case 2:
-            res2 = f2(n/3);
-            break;
-        case 3:
-            res2 = f3(n/3);
-            break;
-        case 4:
-            res2 = f4(n/3);
-            break;
-    }
+    ret = std::async(functions[rand-1], n/3);
+    res2 = ret.get();
 
-
+    // std::osyncstream(std::cout) << "[" << this_id << "] f2 returns " << res1 << " from f" << rand-1 << "(" << n-1 << ")\n";
 
     return res1 + res2;
 }
