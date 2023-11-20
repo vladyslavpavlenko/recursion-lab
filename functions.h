@@ -1,9 +1,14 @@
 #ifndef RECURSIONLAB_FUNCTIONS_H
 #define RECURSIONLAB_FUNCTIONS_H
 
-int f1(int n);
-int f2(int n);
-int f3(int n);
-int f4(int n);
+#include <thread>
+
+int SLEEP_LOWER_BOUND = 100;
+int SLEEP_UPPER_BOUND = 1000;
+
+int f1(int);
+int f2(int);
+int f3(int);
+int f4(int);
 
 #endif //RECURSIONLAB_FUNCTIONS_H

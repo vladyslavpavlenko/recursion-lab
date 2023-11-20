@@ -4,9 +4,9 @@
 #include <string>
 #include <random>
 #include <iostream>
-// #include <syncstream>
+#include <syncstream>
 
 int getRandomNumber(int, int);
-// void syncOut(const std::string& message);
+void syncOut(const std::string&);
 
 #endif //RECURSION_LAB_HELPERS_H
