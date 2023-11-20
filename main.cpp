@@ -17,7 +17,8 @@ int main(int argc, char *argv[]) {
 
     std::cout << "The value of N is: " << N << std::endl << std::endl;
 
-    std::cout << "main.cpp f1(N) = " <<  f1(N) << std::endl;
+    f1(N);
+
     std::cout << "f(1): " << callCount_f1 << std::endl;
     std::cout << "f(2): " << callCount_f2 << std::endl;
     std::cout << "f(3): " << callCount_f3 << std::endl;

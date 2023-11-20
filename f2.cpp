@@ -9,6 +9,8 @@ int f2(int n) {
     callCount_f2++;
 #endif
 
+    // syncOut("f2 is called\n");
+    std::cout << "f2 is called" << std::endl;
 
     // Base case
     if (n <= 0) {
@@ -16,7 +18,7 @@ int f2(int n) {
     }
 
     // Select a random function
-    int rand = getRandomNumber();
+    int rand = getRandomNumber(1, 4);
     int res1 = 0;
 
     switch (rand) {
@@ -34,21 +36,21 @@ int f2(int n) {
             break;
     }
 
-    rand = getRandomNumber();
+    rand = getRandomNumber(1, 4);
     int res2 = 0;
 
     switch (rand) {
         case 1:
-            res1 = f1(n/3);
+            res2 = f1(n/3);
             break;
         case 2:
-            res1 = f2(n/3);
+            res2 = f2(n/3);
             break;
         case 3:
-            res1 = f3(n/3);
+            res2 = f3(n/3);
             break;
         case 4:
-            res1 = f4(n/3);
+            res2 = f4(n/3);
             break;
     }
 
